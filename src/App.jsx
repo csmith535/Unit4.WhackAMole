@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Holes from "./components/Holes.jsx";
+import Welcome from "./components/Welcome.jsx";
 
 const HOLES = 9;
 
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <>
       <main>
+        <Welcome />
         <Holes moleHole={moleHole.current} />
       </main>
     </>

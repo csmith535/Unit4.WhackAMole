@@ -6,11 +6,12 @@ const GameContext = createContext();
 // PROVIDER
 export function GameProvider({ children }) {
   const [isGame, setIsGame] = useState(false);
+  const [score, setScore] = useState();
 
   const game = isGame ? "gameOn" : "gameOff";
 
   const toggleGame = () => {
-    setIsGame(isGame);
+    setIsGame(!isGame);
   };
 
   const value = { isGame, game, toggleGame };
