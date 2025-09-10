@@ -4,7 +4,19 @@ import { createContext, useContext, useState } from "react";
 const GameContext = createContext();
 
 // PROVIDER
-export function GameProvider({ children }) {}
+export function GameProvider({ children }) {
+  const [isGame, setIsGame] = useState(false);
+
+  const game = isGame ? "gameOn" : "gameOff";
+
+  const toggleGame = () => {
+    setIsGame(isGame);
+  };
+
+  const value = { isGame, game, toggleGame };
+
+  return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
+}
 
 // HOOK
 export function useGame() {
