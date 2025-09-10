@@ -1,16 +1,25 @@
 import { useRef } from "react";
+import Holes from "./components/Holes.jsx";
+
+const HOLES = 9;
 
 function makeMole() {
-  const holes = Array.from({ length: 9 }, () => false);
+  const mole = Array.from({ length: HOLES }, () => false);
 
-  const randomIndex = Math.floor(Math.random() * 9);
+  const randomIndex = Math.floor(Math.random() * HOLES);
 
-  holes[randomIndex] = true;
+  mole[randomIndex] = true;
 
-  return holes;
+  return mole;
 }
 
 export default function App() {
-  const mole = useRef(makeMole());
-  return <></>;
+  const moleHole = useRef(makeMole());
+  return (
+    <>
+      <main>
+        <Holes moleHole={moleHole.current} />
+      </main>
+    </>
+  );
 }
