@@ -1,3 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  min-height: 100vh;
+  color: #333;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+button {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+aside {
+  padding: 1em;
+  margin-top: 2em;
+}
+
+p {
+  padding: 1em;
+}
+
+#toggle {
+  margin-top: 2em;
+}
+
+/* Game board styles */
 .holes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,6 +66,14 @@
   height: 180px;
   cursor: pointer;
   position: relative;
+}
+
+.hole:hover {
+  transform: scale(1.05);
+}
+
+.hole:active {
+  transform: scale(0.95);
 }
 
 .mole {
