@@ -1,16 +1,12 @@
-import { useGame } from "../GameContext";
+import useGame from "../GameContext";
 
 export default function Welcome() {
-  const { toggleGame, isGame } = useGame();
+  const { start, isGame } = useGame();
   return (
     <>
       <h2>Whack-A-Mole</h2>
-      <button
-        id="toggle"
-        aria-label="Toggle game start/game end"
-        onClick={toggleGame}
-      >
-        {isGame ? "Start" : "End"}
+      <button id="start" aria-label="start game" onClick={start}>
+        {isGame ? "End" : "Start"}
       </button>
     </>
   );

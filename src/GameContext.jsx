@@ -32,6 +32,12 @@ export function GameProvider({ children }) {
     }
   };
 
+  const start = () => {
+    setScore(0);
+    setMoleHole(makeMole());
+    toggleGame();
+  };
+
   const value = {
     isGame,
     game,
@@ -40,6 +46,7 @@ export function GameProvider({ children }) {
     incScore,
     moleHole,
     handleHoleClick,
+    start,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
